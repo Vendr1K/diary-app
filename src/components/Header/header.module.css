@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.logo__margin {
+  margin-right: 120px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-left: auto;
+}
+
+.button__icon {
+  margin-right: 10px;
+}
+
+.input {
+  width: 550px;
+  margin-right: 20px;
+  height: 60px;
+}
+
+.button__text {
+  font-family: IBM Plex Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--text-color);
+}
