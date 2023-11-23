@@ -4,14 +4,26 @@
   background-color: aliceblue;
   position: relative;
   display: flex;
-  border-radius: 10px;
+  border-radius: var(--border-radius);;
   flex-direction: column;
   justify-content: end;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   box-shadow: var(--shadow);
+  overflow: hidden;
+  cursor: pointer;
+}
 
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.5s ease;
+  border-radius: var(--border-radius);;
+}
+
+.card:hover img {
+  transform: scale(1.25);
 }
 
 .icon {
@@ -33,10 +45,10 @@
   background-color: var(--white-color);
   opacity: 0.9;
   height: 83px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);;
   box-shadow: var(--shadow);
   padding: 10px 15px;
-} 
+}
 
 .title_wrapper {
   display: flex;
@@ -53,8 +65,8 @@
   font-weight: 900;
   line-height: normal;
   max-width: 210px;
-  white-space: nowrap; 
-  overflow: hidden; 
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -63,7 +75,7 @@
   font-size: 14px;
   font-weight: 300;
   line-height: normal;
-} 
+}
 
 .text_content {
   color: var(--text-color);
