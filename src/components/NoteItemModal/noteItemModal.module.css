@@ -89,16 +89,6 @@
   position: absolute;
   top: 14px;
   right: 14px;
-  border-radius: 100%;
-  font-size: 34px;
-  width: 80px;
-  height: 80px;
-  background-color: var(--white-color);
-  opacity: 0.8;
-  backdrop-filter: blur(5px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .wrapper {

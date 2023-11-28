@@ -21,10 +21,11 @@ export function Modal({ children, isRendered, handleClose }: IModal) {
   })
 
   useEffect(() => {
-    if (isRendered) {
-      document.body.style.overflow = 'hidden'
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = ''
     }
-  }, [isRendered])
+  }, [])
 
   if (!node) return null
   return ReactDOM.createPortal(

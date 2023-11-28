@@ -2,6 +2,7 @@ import React from 'react'
 import { EIcons, Icon } from '../Icon'
 
 import styles from './noteItemModal.module.css'
+import { Emoji } from '../UI'
 
 interface INotesItem
   extends React.DetailedHTMLProps<
@@ -38,7 +39,7 @@ export function NoteItemModal({
       </div>
       <div className={styles.wrapper}>
         <img src={foto} alt='Фото' className={styles.img} />
-        <div className={styles.icon}>{emoji}</div>
+        <Emoji className={styles.icon} emoji={emoji} bigSize />
       </div>
     </div>
   )

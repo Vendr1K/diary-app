@@ -33,7 +33,7 @@ export function Select({ isSelected, setIsSelected, options }: ISelect) {
 
   return (
     <div className={styles.dropdown} ref={ref}>
-      <div className={styles.dropdown__btn} tabIndex={0} onClick={handleOpen}>
+      <button className={styles.dropdown__btn} onClick={handleOpen}>
         <div className={styles.active__option}>{isSelected}</div>
         <Icon
           name={EIcons.dropdownArrow}
@@ -41,7 +41,7 @@ export function Select({ isSelected, setIsSelected, options }: ISelect) {
           width={'21'}
           height={'21'}
         />
-      </div>
+      </button>
       {isOpen && (
         <div className={styles.dropdown__content}>
           {options.map(item => {

@@ -1,7 +1,7 @@
 import { dataFormat } from '../../utils/dataFormat'
 import { NoteItemModal } from '../NoteItemModal'
 import { useAnimationModal } from '../../hooks'
-import { Modal } from '../UI'
+import { Emoji, Modal } from '../UI'
 
 import styles from './notesItem.module.css'
 
@@ -26,11 +26,13 @@ export const NotesItem = ({ ...props }: INotesItem) => {
     <>
       <li className={styles.card} onClick={() => setIsOpen(true)}>
         <img className={styles.img} src={foto} alt='Фото' />
-        <div className={styles.icon}>{emoji}</div>
+        <Emoji emoji={emoji} className={styles.icon} />
         <div className={styles.content_wrapper}>
           <div className={styles.title_wrapper}>
             <h3 className={styles.title}>{title}</h3>
-            <span className={styles.date}>{dataFormat(date)}</span>
+            <span className={styles.date}>
+              {dataFormat({ date, vissible: 'shrot' })}
+            </span>
           </div>
           <p className={styles.text_content}>{note}</p>
         </div>
@@ -45,7 +47,7 @@ export const NotesItem = ({ ...props }: INotesItem) => {
           <NoteItemModal
             title={title}
             note={note}
-            date={dataFormat(date)}
+            date={dataFormat({ date, vissible: 'big' })}
             foto={foto}
             emoji={emoji}
             handleClose={handleClose}
