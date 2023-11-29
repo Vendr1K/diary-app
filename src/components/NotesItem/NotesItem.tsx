@@ -27,14 +27,12 @@ export const NotesItem = ({ ...props }: INotesItem) => {
       <li className={styles.card} onClick={() => setIsOpen(true)}>
         <img className={styles.img} src={foto} alt='Фото' />
         <Emoji emoji={emoji} className={styles.icon} />
-        <div className={styles.content_wrapper}>
-          <div className={styles.title_wrapper}>
-            <h3 className={styles.title}>{title}</h3>
-            <span className={styles.date}>
-              {dataFormat({ date, vissible: 'shrot' })}
-            </span>
-          </div>
-          <p className={styles.text_content}>{note}</p>
+        <div className={styles.content}>
+          <h2 className={styles.title}>{title}</h2>
+          <span className={styles.date}>
+            {dataFormat({ date, vissible: 'shrot' })}
+          </span>
+          <p className={styles.text}>{note}</p>
         </div>
       </li>
 

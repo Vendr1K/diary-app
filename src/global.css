@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+
 :root {
   --body-color: #FDFCF3;
   --white-color: #FFF;
@@ -37,7 +39,7 @@ body::-webkit-scrollbar-thumb {
 
 img {
   height: auto;
-  max-width: 100%;
+  width: 100%;
   object-fit: cover;
 }
 

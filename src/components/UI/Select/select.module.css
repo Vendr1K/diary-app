@@ -1,6 +1,5 @@
 .dropdown {
   position: relative;
-  height: 60px;
 }
 
 .dropdown__btn {
@@ -13,7 +12,7 @@
   box-shadow: var(--shadow);
   padding: 20px;
   cursor: pointer;
-  max-height: 60px;
+  height: 60px;
 }
 
 .dropdown__content {
@@ -53,21 +52,33 @@
 
 .active__option {
   height: 21px;
+  margin-right: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown__item:hover {
   background-color: var(--hint-color);
 }
 
-.active__option {
-  margin-right: 20px;
-}
-
 .rotateArrow {
   transform: rotate(180deg);
   transition: transform 0.1s ease;
-} 
+}
 
 .arrow {
-  transition: transform 0.1s ease; 
+  transition: transform 0.1s ease;
+}
+
+@media all and (max-width: 576px) {
+  .dropdown__btn {
+    min-height: auto;
+    height: 40px;
+    padding: 0 10px;
+  }
+
+  .dropdown__btn> :not(:last-child) {
+    margin-right: 10px;
+  }
 }

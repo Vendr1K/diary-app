@@ -13,7 +13,7 @@ export function Logo({ className, href, ...props }: ILogo) {
   return (
     <a href={href} className={`${styles.logo} ${className}`} {...props}>
       <div className={styles.logo__background}>
-        <Icon name={EIcons.logo} />
+        <Icon name={EIcons.logo}  className={styles.icon}/>
       </div>
       <h1 className={styles.title}>Дневник</h1>
     </a>

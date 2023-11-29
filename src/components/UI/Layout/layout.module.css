@@ -1,5 +1,11 @@
 .container {
   width: 100%;
-  min-width: 1440px;
+  min-width: 320px;
   padding: 40px;
+}
+
+@media all and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
 }

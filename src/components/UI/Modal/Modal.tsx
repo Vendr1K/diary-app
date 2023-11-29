@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { useClickOutside } from '../../../hooks'
 
-import styles from './modale.module.css'
+import styles from './modal.module.css'
 
 interface IModal
   extends React.DetailedHTMLProps<

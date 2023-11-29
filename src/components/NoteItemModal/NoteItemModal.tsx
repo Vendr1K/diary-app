@@ -31,7 +31,7 @@ export function NoteItemModal({
         <h2 className={styles.title}>{title}</h2>
       </div>
       <button className={styles.close_btn} onClick={handleClose}>
-        <Icon name={EIcons.close} width={'30'} height={'30'} />
+        <Icon name={EIcons.close} className={styles.close_icon} width={'30'} height={'30'} />
       </button>
       <div className={styles.date}>{date}</div>
       <div className={styles.text}>

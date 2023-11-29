@@ -17,3 +17,14 @@
 input::placeholder {
   color: var(--hint-color);
 }
+
+@media all and (max-width: 576px) {
+  .input {
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  .input::placeholder {
+    font-size: 12px;
+  }
+}

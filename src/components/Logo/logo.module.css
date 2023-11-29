@@ -25,3 +25,19 @@
   color: var(--text-color);
   text-shadow: var(--shadow);
 }
+
+@media all and (max-width: 576px) {
+  .logo__background {
+    width: 40px;
+    height: 40px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+}

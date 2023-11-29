@@ -6,7 +6,7 @@
   background: rgba(50, 47, 40, 0.70);
   backdrop-filter: blur(5px);
   width: 100%;
-  min-width: 1440px;
+  min-width: 320px;
   min-height: 100vh;
   height: 100%;
   opacity: 0;
@@ -21,7 +21,7 @@
 }
 
 .modalContainer {
-  padding: 128px 40px;
+  padding: 100px 40px;
   overflow: auto;
   position: relative;
   display: flex;
@@ -30,11 +30,18 @@
   z-index: 1000;
   min-height: 100%;
   width: 100%;
-  min-width: 1360px;
 }
 
 .modalContent {
   background: linear-gradient(113deg, #FFF 0%, #F0F0F0 99.94%);
   box-shadow: var(--shadow);
   border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+@media all and (max-width: 768px) {
+
+  .modalContainer {
+    padding: 60px 20px;
+  }
 }
