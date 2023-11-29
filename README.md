@@ -1,4 +1,4 @@
-## [Посмотреть проект](diary-app-fawn.vercel.app)
+## [Посмотреть проект](https://diary-app-fawn.vercel.app/)
 
 ## React + TypeScript + Vite
 
