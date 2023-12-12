@@ -1,8 +1,8 @@
 import React from 'react'
-import { EIcons, Icon } from '../Icon'
+import { EIcons, Icon } from '..'
+import { Button, Emoji } from '../UI'
 
 import styles from './noteItemModal.module.css'
-import { Emoji } from '../UI'
 
 interface INotesItem
   extends React.DetailedHTMLProps<
@@ -30,9 +30,14 @@ export function NoteItemModal({
       <div className={styles.top}>
         <h2 className={styles.title}>{title}</h2>
       </div>
-      <button className={styles.close_btn} onClick={handleClose}>
-        <Icon name={EIcons.close} className={styles.close_icon} width={'30'} height={'30'} />
-      </button>
+      <Button className={styles.close_btn} onClick={handleClose}>
+        <Icon
+          name={EIcons.close}
+          className={styles.close_icon}
+          width={'30'}
+          height={'30'}
+        />
+      </Button>
       <div className={styles.date}>{date}</div>
       <div className={styles.text}>
         <p className={styles.descr}>{note}</p>

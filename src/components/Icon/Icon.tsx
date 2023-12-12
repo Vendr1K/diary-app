@@ -1,5 +1,5 @@
 import { SVGProps } from 'react'
-import { DefaultSmile, DropdownArrow, Pen, Logo, Close } from './Icons'
+import { DefaultSmile, DropdownArrow, Pen, Logo, Close, Search } from './Icons'
 
 interface IIconProps extends SVGProps<SVGSVGElement> {
   name: EIcons
@@ -11,7 +11,8 @@ export enum EIcons {
   dropdownArrow = 'DropdownArrow',
   pen = 'Pen',
   logo = 'Logo',
-  close = 'Close'
+  close = 'Close',
+  search = 'Search'
 }
 
 export const Icon = (props: IIconProps) => {
@@ -28,6 +29,8 @@ export const Icon = (props: IIconProps) => {
       return <Pen width={width} height={height} {...props} />
     case EIcons.close:
       return <Close width={width} height={height} {...props} />
+    case EIcons.search:
+      return <Search width={width} height={height} {...props} />
 
     default:
       return <></>

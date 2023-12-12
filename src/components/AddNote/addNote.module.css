@@ -1,0 +1,164 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 160px auto;
+  gap: 40px;
+}
+
+.inputs_wrapper {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.image_list {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.area_wrapper {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-right: auto;
+}
+
+.button_icon {
+  margin-right: 10px;
+}
+
+.button_text {
+  font-family: IBM Plex Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--text-color);
+}
+
+.inputs_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 40px;
+}
+
+.input {
+  padding: 20px;
+  height: 60px;
+}
+
+.input_bottom_group {
+  display: flex;
+  gap: 40px;
+}
+
+.input_date {
+  width: 210px;
+}
+
+@media (max-width: 1440px) {
+  .wrapper {
+    grid-template-columns: 1fr 220px;
+  }
+
+  .image_list {
+    grid-row-end: 2;
+  }
+
+  .area_wrapper {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .wrapper {
+    gap: 20px;
+    grid-template-rows: auto;
+  }
+
+  .inputs_wrapper {
+    gap: 20px
+  }
+
+  .input_date {
+    width: 190px;
+  }
+
+  .input_bottom_group {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 620px) {
+
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image_list {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .inputs_wrapper {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .area_wrapper {
+    grid-column-start: 1;
+    grid-column-end: auto;
+  }
+
+  .input_date {
+    width: 100%;
+    order: 1;
+  }
+
+  .selector {
+    order: 2;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .notes {
+    padding: 0 21px;
+  }
+
+  .button {
+    padding: 10px;
+  }
+
+  .button_text {
+    display: none;
+  }
+
+  .button_icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0;
+  }
+
+  .area_wrapper {
+    gap: 20px;
+  }
+
+  .input {
+    height: 40px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}

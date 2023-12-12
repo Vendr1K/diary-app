@@ -78,6 +78,7 @@
 @media all and (max-width: 576px) {
   .header {
     gap: 20px;
+    margin-bottom: 20px;
   }
 
   .button {

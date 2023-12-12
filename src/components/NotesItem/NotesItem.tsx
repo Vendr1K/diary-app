@@ -1,5 +1,5 @@
 import { dataFormat } from '../../utils/dataFormat'
-import { NoteItemModal } from '../NoteItemModal'
+import { NoteItemModal } from '..'
 import { useAnimationModal } from '../../hooks'
 import { Emoji, Modal } from '../UI'
 

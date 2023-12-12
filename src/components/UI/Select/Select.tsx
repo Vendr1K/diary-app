@@ -3,6 +3,7 @@ import { useClickOutside } from '../../../hooks'
 import { EIcons, Icon } from '../../Icon/Icon'
 
 import styles from './select.module.css'
+import { Button } from '..'
 
 interface ISelect
   extends React.DetailedHTMLProps<
@@ -14,7 +15,12 @@ interface ISelect
   options: string[]
 }
 
-export function Select({ isSelected, setIsSelected, options }: ISelect) {
+export function Select({
+  isSelected,
+  setIsSelected,
+  options,
+  className,
+}: ISelect) {
   const [isOpen, setIsOpen] = useState(false)
   const ref = useClickOutside(() => {
     setIsOpen(false)
@@ -32,8 +38,8 @@ export function Select({ isSelected, setIsSelected, options }: ISelect) {
   }
 
   return (
-    <div className={styles.dropdown} ref={ref}>
-      <button className={styles.dropdown__btn} onClick={handleOpen}>
+    <div className={`${styles.dropdown} ${className}`} ref={ref}>
+      <Button className={styles.dropdown__btn} onClick={handleOpen}>
         <div className={styles.active__option}>{isSelected}</div>
         <Icon
           name={EIcons.dropdownArrow}
@@ -41,7 +47,7 @@ export function Select({ isSelected, setIsSelected, options }: ISelect) {
           width={'21'}
           height={'21'}
         />
-      </button>
+      </Button>
       {isOpen && (
         <div className={styles.dropdown__content}>
           {options.map(item => {

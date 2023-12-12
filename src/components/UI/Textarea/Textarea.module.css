@@ -1,0 +1,27 @@
+.textarea {
+  resize: none;
+  width: 100%;
+  border: none;
+  outline: none;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  min-height: 400px;
+  overflow: hidden;
+  padding: 20px;
+  font-size: 18px;
+  transition: height 0.5s ease;
+}
+
+textarea::placeholder {
+  color: var(--hint-color);
+}
+
+@media (max-width: 576px) {
+
+  .textarea {
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 300;
+    min-height: 240px;
+  }
+}
