@@ -14,7 +14,7 @@ interface INotesItem
   note: string
   date: string
   foto: string
-  emoji: string
+  emoji: string | JSX.Element
 }
 
 export const NotesItem = ({ ...props }: INotesItem) => {

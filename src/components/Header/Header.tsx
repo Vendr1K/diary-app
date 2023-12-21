@@ -6,9 +6,7 @@ import { usePage } from '../../hooks'
 import styles from './header.module.css'
 
 export function Header() {
-  const [isSelected, setIsSelected] = useState<JSX.Element | string>(
-    <Icon name={EIcons.defaultSmile} width={'19'} height={'19'} />
-  )
+  const [isSelected, setIsSelected] = useState<string>('')
   const options = [
     '😌',
     '😊',

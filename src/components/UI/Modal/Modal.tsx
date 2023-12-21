@@ -14,7 +14,12 @@ interface IModal
   handleClose: () => void
 }
 
-export function Modal({ children, isRendered, handleClose }: IModal) {
+export function Modal({
+  children,
+  isRendered,
+  className,
+  handleClose
+}: IModal) {
   const node = document.querySelector('#modal')
   const ref = useClickOutside(() => {
     handleClose()
@@ -31,7 +36,7 @@ export function Modal({ children, isRendered, handleClose }: IModal) {
   return ReactDOM.createPortal(
     <div className={`${styles.modalScreen} ${isRendered ? styles.active : ''}`}>
       <div className={styles.modalContainer}>
-        <div className={styles.modalContent} ref={ref}>
+        <div className={`${styles.modalContent} ${className}`} ref={ref}>
           {children}
         </div>
       </div>

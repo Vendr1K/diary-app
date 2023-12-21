@@ -1,0 +1,44 @@
+.item {
+  cursor: pointer;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.item::after {
+  pointer-events: none;
+  display: block;
+  height: 60px;
+  width: 60px;
+  content: '';
+  background: no-repeat center / 24px url("./image/check.svg"),
+    linear-gradient(137.43deg, #FFF76A 31.13%, #FFCE89 100%);
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 1000;
+}
+
+.item.active::after {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.item.opacity {
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}
+
+.item.vertical {
+  grid-row: span 2;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+}

@@ -6,6 +6,8 @@ import { NoteItemModal } from './NoteItemModal/NoteItemModal'
 import { NoteList } from './NoteList/NoteList'
 import { NotesItem } from './NotesItem/NotesItem'
 import { ImageList } from './ImageList/ImageList'
+import { SearchImage } from './SearchImage/SearchImage'
+import { ImageItem } from './ImageItem/ImageItem'
 
 export {
   AddNote,
@@ -16,5 +18,7 @@ export {
   NoteItemModal,
   NoteList,
   NotesItem,
-  ImageList
+  ImageList,
+  SearchImage,
+  ImageItem
 }

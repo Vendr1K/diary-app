@@ -1,6 +1,7 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { Button, Form, Input, Select, Textarea } from '../UI'
-import { EIcons, Icon, ImageList } from '..'
+import { EIcons, Icon, SearchImage } from '..'
+import { useNote, usePage } from '../../hooks'
 
 import styles from './addNote.module.css'
 
@@ -11,31 +12,49 @@ interface IAddNote
   > {}
 
 export const AddNote = ({ ...props }: IAddNote) => {
-  const [textareaValue, setTextareaValue] = useState<string>('')
-  const [inputTitle, setInputTitle] = useState<string>('')
-  const [inputDate, setInputDate] = useState<string>('')
   const [inputType, setInputType] = useState('text')
+  const { openDairy } = usePage()
+
+  const {
+    title,
+    date,
+    emoji,
+    note,
+    foto,
+    changeTitle,
+    changeDate,
+    setEmoji,
+    changeNote,
+    addNotes,
+    resetNotes
+  } = useNote()
+
+  const isValueValid = (value: string) => {
+    return !!value
+  }
+  const isRegFormValid =
+    isValueValid(title) &&
+    isValueValid(date) &&
+    isValueValid(emoji) &&
+    isValueValid(note) &&
+    isValueValid(foto)
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(textareaValue, inputTitle, inputDate, isSelected)
+    if (!isRegFormValid) {
+      return
+    }
+    addNotes({
+      date,
+      emoji,
+      foto,
+      note,
+      title
+    })
+    openDairy()
+    resetNotes()
   }
 
-  const handleChangeTextArea = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    setTextareaValue(event.target.value)
-  }
-
-  const handleChangeTitle = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputTitle(event.target.value)
-  }
-
-  const handleChangeDate = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputDate(event.target.value)
-  }
-
-  const [isSelected, setIsSelected] = useState<JSX.Element | string>(
-    <Icon name={EIcons.defaultSmile} width={'19'} height={'19'} />
-  )
   const options = [
     '😌',
     '😊',
@@ -71,32 +90,38 @@ export const AddNote = ({ ...props }: IAddNote) => {
             <Input
               type='text'
               placeholder={'Название'}
-              value={inputTitle}
-              onChange={handleChangeTitle}
+              value={title}
+              onChange={changeTitle}
+              required
               className={styles.input}
             />
             <div className={styles.input_bottom_group}>
               <Select
                 className={styles.selector}
-                isSelected={isSelected}
+                isSelected={emoji}
                 options={options}
-                setIsSelected={setIsSelected}
+                setIsSelected={setEmoji}
               />
               <Input
                 placeholder={'Дата'}
                 type={inputType}
-                value={inputDate}
-                onChange={handleChangeDate}
+                value={date}
+                onChange={changeDate}
                 className={`${styles.input_date} ${styles.input}`}
                 onFocus={onFocus}
+                required
                 onBlur={onBlur}
               />
             </div>
           </div>
-          <ImageList className={styles.image_list} />
+          <SearchImage className={styles.image_list} />
           <div className={styles.area_wrapper}>
-            <Textarea value={textareaValue} onChange={handleChangeTextArea} />
-            <Button className={styles.button} primary>
+            <Textarea value={note} onChange={changeNote} />
+            <Button
+              className={styles.button}
+              primary
+              disabled={!isRegFormValid}
+            >
               <Icon name={EIcons.pen} className={styles.button_icon} />
               <span className={styles.button_text}>Добавить запись</span>
             </Button>

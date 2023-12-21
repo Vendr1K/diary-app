@@ -9,6 +9,7 @@
   overflow: hidden;
   padding: 20px;
   font-size: 18px;
+  font-weight: normal;
   transition: height 0.5s ease;
 }
 

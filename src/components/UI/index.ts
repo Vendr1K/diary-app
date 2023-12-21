@@ -8,7 +8,7 @@ import { Modal } from './Modal/Modal'
 import { Emoji } from './Emoji/Emoji'
 import { Form } from './Form/Form'
 import { Textarea } from './Textarea/Textarea'
-import { ImageItem } from './ImageItem/ImageItem'
+import { Image } from './Image/Image'
 
 export {
   Button,
@@ -21,5 +21,5 @@ export {
   Emoji,
   Form,
   Textarea,
-  ImageItem
+  Image
 }

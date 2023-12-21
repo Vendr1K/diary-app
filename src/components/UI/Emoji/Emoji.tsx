@@ -6,7 +6,7 @@ interface IEmoji
     HTMLDivElement
   > {
   bigSize?: boolean
-  emoji: string
+  emoji: string | JSX.Element
 }
 
 export const Emoji = ({ emoji, bigSize, className }: IEmoji) => {

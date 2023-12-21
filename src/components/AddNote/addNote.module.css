@@ -64,6 +64,11 @@
   width: 210px;
 }
 
+.button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 @media (max-width: 1440px) {
   .wrapper {
     grid-template-columns: 1fr 220px;
