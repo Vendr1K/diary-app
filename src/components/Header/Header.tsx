@@ -7,24 +7,6 @@ import styles from './header.module.css'
 
 export function Header() {
   const [isSelected, setIsSelected] = useState<string>('')
-  const options = [
-    '😌',
-    '😊',
-    '😄',
-    '🤣',
-    '😰',
-    '🥰',
-    '🙃',
-    '😔',
-    '😇',
-    '🤔',
-    '😩',
-    '😭',
-    '😤',
-    '😵',
-    '🤒',
-    '🤤'
-  ]
 
   const { openNotes, openDairy, isNotesOpen } = usePage()
 
@@ -35,11 +17,7 @@ export function Header() {
         <>
           <div className={styles.group}>
             <Input className={styles.input} placeholder={'Поиск'} />
-            <Select
-              isSelected={isSelected}
-              setIsSelected={setIsSelected}
-              options={options}
-            />
+            <Select isSelected={isSelected} setIsSelected={setIsSelected} />
           </div>
           <Button className={styles.button} primary onClick={openNotes}>
             <Icon name={EIcons.pen} className={styles.button__icon} />

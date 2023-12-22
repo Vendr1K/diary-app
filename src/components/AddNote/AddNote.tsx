@@ -32,6 +32,7 @@ export const AddNote = ({ ...props }: IAddNote) => {
   const isValueValid = (value: string) => {
     return !!value
   }
+
   const isRegFormValid =
     isValueValid(title) &&
     isValueValid(date) &&
@@ -54,25 +55,6 @@ export const AddNote = ({ ...props }: IAddNote) => {
     openDairy()
     resetNotes()
   }
-
-  const options = [
-    '😌',
-    '😊',
-    '😄',
-    '🤣',
-    '😰',
-    '🥰',
-    '🙃',
-    '😔',
-    '😇',
-    '🤔',
-    '😩',
-    '😭',
-    '😤',
-    '😵',
-    '🤒',
-    '🤤'
-  ]
 
   const onBlur = () => {
     setInputType('text')
@@ -99,7 +81,6 @@ export const AddNote = ({ ...props }: IAddNote) => {
               <Select
                 className={styles.selector}
                 isSelected={emoji}
-                options={options}
                 setIsSelected={setEmoji}
               />
               <Input

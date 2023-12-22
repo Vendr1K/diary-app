@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, MouseEvent } from 'react'
 import { useClickOutside } from '../../../hooks'
 import { EIcons, Icon } from '../../Icon/Icon'
 import { Button } from '..'
@@ -12,8 +12,27 @@ interface ISelect
   > {
   isSelected: string
   setIsSelected: React.Dispatch<React.SetStateAction<string>>
-  options: string[]
+  options?: string[]
 }
+
+const dataOption = [
+  '😌',
+  '😊',
+  '😄',
+  '🤣',
+  '😰',
+  '🥰',
+  '🙃',
+  '😔',
+  '😇',
+  '🤔',
+  '😩',
+  '😭',
+  '😤',
+  '😵',
+  '🤒',
+  '🤤'
+]
 
 export function Select({
   isSelected,
@@ -26,10 +45,11 @@ export function Select({
     setIsOpen(false)
   })
 
-  const handleOpen = () => {
+  const handleOpen = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
     setIsOpen(!isOpen)
   }
-  const handleSelected = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleSelected = (event: MouseEvent<HTMLDivElement>) => {
     if (!(event.target instanceof HTMLElement)) return
     if (event.target.textContent) {
       setIsOpen(false)
@@ -56,7 +76,7 @@ export function Select({
       </Button>
       {isOpen && (
         <div className={styles.dropdown__content}>
-          {options.map(item => {
+          {(options ?? dataOption).map(item => {
             return (
               <div
                 key={item}

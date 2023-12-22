@@ -1,4 +1,5 @@
 .textarea {
+  font-family: 'Roboto', sans-serif;
   resize: none;
   width: 100%;
   border: none;
@@ -9,7 +10,9 @@
   overflow: hidden;
   padding: 20px;
   font-size: 18px;
+  font-style: normal;
   font-weight: normal;
+  line-height: normal;
   transition: height 0.5s ease;
 }
 
@@ -18,11 +21,13 @@ textarea::placeholder {
 }
 
 @media (max-width: 576px) {
-
   .textarea {
     padding: 12px;
     font-size: 14px;
-    font-weight: 300;
     min-height: 240px;
+  }
+
+  .textarea::placeholder {
+    font-size: 12px;
   }
 }

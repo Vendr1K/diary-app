@@ -21,10 +21,10 @@ interface INoteContext {
   changeNote: (event: ChangeEvent<HTMLTextAreaElement>) => void
   changeDate: (event: ChangeEvent<HTMLInputElement>) => void
   changeFoto: (event: ChangeEvent<HTMLInputElement>) => void
+  setFoto: React.Dispatch<React.SetStateAction<string>>
+  setEmoji: React.Dispatch<React.SetStateAction<string>>
   resetNotes: () => void
   skipFoto: () => void
-  setEmoji: React.Dispatch<React.SetStateAction<string>>
-  setFoto: React.Dispatch<React.SetStateAction<string>>
 }
 
 export const NoteContext = createContext<INoteContext>({
@@ -39,9 +39,8 @@ export const NoteContext = createContext<INoteContext>({
   changeNote: () => {},
   changeDate: () => {},
   changeFoto: () => {},
-
-  resetNotes: () => {},
-  skipFoto: () => {},
   setEmoji: () => {},
-  setFoto: () => {}
+  setFoto: () => {},
+  resetNotes: () => {},
+  skipFoto: () => {}
 })

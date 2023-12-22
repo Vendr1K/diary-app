@@ -23,7 +23,7 @@ export const NoteProvider = ({ children }: { children: React.ReactNode }) => {
   const [note, setNote] = useState('')
   const [date, setDate] = useState('')
   const [foto, setFoto] = useState('')
-  const [emoji, setEmoji] = useState<string>('')
+  const [emoji, setEmoji] = useState('')
 
   const changeTitle = (event: ChangeEvent<HTMLInputElement>) =>
     setTitle(event.target.value)

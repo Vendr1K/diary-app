@@ -20,8 +20,7 @@ export const ImageItem = ({ fotoLoad, handleClose, isModal }: IImageItem) => {
 
   const activeFoto = (foto: string, src: string, styles: CSSModuleClasses) => {
     if (foto) {
-      return src ? styles.active : styles.opacity
-      // return foto === 'http://localhost:5173' + src.slice(1) ? styles.active : styles.opacity
+      return foto === src ? styles.active : styles.opacity
     }
     return ''
   }
